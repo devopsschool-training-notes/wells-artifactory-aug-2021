@@ -1,0 +1,280 @@
+Rajesh Kumar
+-------------------
+9:00 AM IST - 1:00 PM IST
+-------------------------
+15 mins - BREAK
+========================================================
+What is an Artifactory?
+--------------------------------
+ 	- is a Registry
+	       - Contains Repository
+			   - Source Code e.g - github
+			   - Build Code/Packeg  e.g - artifactory
+	- privare registry
+
+	- For storing files/binary/build/packages/artifact
+
+	- Version
+		- Community Edi / OSS	- FREE - Support only Maven
+		- Professional	- PAID - SUpport all package types - 30 Days Trial
+	ALL - https://www.jfrog.com/confluence/display/JFROG/Package+Management
+	COMPARE - https://www.jfrog.com/confluence/display/JFROG/Artifactory+Comparison+Matrix
+
+	From JFROG Company
+
+	Dev using JAVA
+	- PLATFORM IND
+	-- You can install and run this tool on any OS
+	-- Require JRE
+
+
+
+Why Artifactory?
+-----------------------------------
+	We are in the world of multiple distributed different env.
+	World of Packaging
+	-----------------------------------------
+	System Packaging
+			package format			FROM?
+	- WINDOWS	exe - msi 			nuget.org or chocolatey
+	- LINUX		
+	- Ubuntu	debian				apt repo			
+	- RHEL		rpm				yum repo
+	- MAC		dmg				apple store
+	- ANDROID	apk				play store
+
+
+	App Packaging	
+			package format			FROM?
+	- GENERAL	zip - tar 			MULTIPLE
+	- DOTNET	dll - exe 			MULTIPLE
+	- JAVA		jar - war - ear 		MULTIPLE
+
+	You are developing exe msi debian rpm dmg apk zip tar jar - war - ear	
+	- Where would i store all these private packages?
+
+	TYPES OF PACKAGE VERSION
+	- STABLE VERSION PACKAGE
+	- NON-STABLE VERSION PACKAGE											
+	Org 
+	- Have Multiple Project
+			- Have multple components/module/service
+				       - Have Dependency on Internal or External pack	
+
+	How we manage Internal depenendency for Multiple Project?
+	- Self service centralized platform
+	 
+	How we manage External depenendency for Multiple Project?
+	- Self service centralized platform
+
+	Security 
+	- ROLE BASED ACCESS CONTROL
+		- EACH PROJECT
+			- WHO ADMIN
+			- WHO WRITE
+			- WHO READ - DEFAULT ALL 
+
+	MUST UNDERSTAND YOUR BUILD TOOLS
+	- Maven 
+	- Gradle
+	- Ant
+	- Msbuild
+	- pybuilder
+	- gobuild
+	- make
+	- bash
+	- ps
+
+	ENFORCE PROCESS and BEST PRACTICES IMPLEMENTATION
+	- During Build time
+	- During run time
+	- During Storing time
+	- Naming convention
+	- etc
+
+	Ease of Admin & Ops team.
+	- BACKUP
+	- Restoration
+	- Cleanup
+	- org policy implementation
+
+	Maintaining Package integrity????
+	software.exe --> blr ----HACKED/MODIFIED----> Us office ---> PROD --> Millions of users
+	DEV ---> QA ---> PROD
+	--------------------
+		SAME PACK
+
+	- CHECKSUM
+	- PGP
+	- SHA
+	- MD5
+
+	ANSWER - ARTIFACTORY
+===========================================================================
+OPTIONS === OTHER TOOL
+--------------------------------------
+Sonatype Nexus - Apache Archiva
+
+=================================================================
+How Artifactory Works???? Artifactory Architecture
+---------------------------------------------------
+HUMAN -->	WEB 		DB		FILESTORE
+		---------------------------------------------------
+		DASHBOARD	META		PACKAGES
+		JAVA/HTML/JSS	
+				
+				Derby (the default embedded database, no additional configuration needed)
+				MySQL v5.5 to v5.7 with InnoDB
+				Oracle version 11g (11.2) to 19c (19.3)
+				Microsoft SQL Server 2008 (10.5) and above
+				PostgreSQL v9.5 and above
+				MariaDB versions 10.2.9-10.4 and version 10.5.9 
+
+
+FILESTORE
+https://www.jfrog.com/confluence/display/JFROG/Configuring+the+Filestore
+-----------------------------------
+		file-system
+		cache-fs
+		full-db
+		full-db-direct
+		s3
+		google-storage
+		double-shards
+		redundant-shards
+		cluster-file-system
+		cluster-s3
+		cluster-google-storage
+		cluster-azure-blob-storage
+
+How to install Artifactory?
+-----------------------------------------
+
+Pre - 
+https://www.jfrog.com/confluence/display/JFROG/System+Requirements
+- PLATFORM	- ALL 
+- CPU 		- 1 Core
+- RAM		- 4 GB
+- STORAGE	- 10 GB
+- WHICH JRE VERSION - JRE 11
+
+
+Demo - How to install Artifactory?
+-------------------------------------
+
+
+Workflow in Artifactory? How to work with Artifactory?
+
+QS#1
+Why we should store Packages in Build repository instead of git/github?
+========================================================================
+	REPOSIZE		REPOSIZE		REPOSIZE === AFTER 1 YEAR - 1 TB - 30 mins
+GIT - 	10 MB			20 MB			30 MB
+	Package.zip
+	
+	CODE --	1000 KB	-> 100K == 1100 KB
+	PACKAGE -- 1 MB -> 1.1 MB == 2.1
+
+ARTIFACTORY
+	10 MB			10 MB			10 MB - 2 SEC
+	Package.zip 
+	v1			v2			v3	
+
+============================================
+  5  yum install java-11-openjdk-devel
+    6  java --version
+    7  java -version
+    8  yum list installed | grep java
+    9  yum remove java-1.7.0-openjdk.x86_64
+   10  yum remove java-1.7.0-openjdk-headless.x86_64
+   11  yum remove java-1.8.0-openjdk.x86_64
+   12  yum list installed | grep java
+   13  yum remove java-1.8.0-openjdk-headless.x86_64
+   14  ckear
+   15  clear
+   16  java -version
+
+===================================
+$ systemctl stop firewalld
+$ systemctl disable firewalld
+
+$ cd /opt/
+$ wget https://releases.jfrog.io/artifactory/artifactory-pro/org/artifactory/pro/jfrog-artifactory-pro/7.23.3/jfrog-artifactory-pro-7.23.3-linux.tar.gz
+$ tar -zxvf jfrog-artifactory-pro-7.23.3-linux.tar.gz
+
+$ cd jfrog-artifactory-pro-7.23.3
+$ cd app/bin
+$ ./artifactory.sh start
+
+$ ./artifactory.sh status
+Using default router's certificate and private key
+router is running (PID: 10621)
+
+metadata is running (PID: 10767)
+event is running (PID: 10878)
+frontend is running (PID: 10994)
+Artifactory is running, on pid=11080
+
+
+# BROWSE - http://15.207.221.219:8082
+# Username/Password - admin/password
+
+
+========================ERROR===========================================
+
+$ more router-service.log
+2021-08-09T06:28:34.562Z [jfrou] [INFO ] [12eb5f8f306fefda] [security_keys.go:149          ]
+ [main                ] - Master key is missing. Pending for 110 seconds with 2m0s timeout
+2021-08-09T06:28:39.564Z [jfrou] [INFO ] [12eb5f8f306fefda] [security_keys.go:149          ]
+ [main                ] - Master key is missing. Pending for 115 seconds with 2m0s timeout
+2021-08-09T06:28:44.300Z [jfrou] [FATAL] [12eb5f8f306fefda] [bootstrap.go:98               ]
+ [main                ] - Failed resolving master key: failed resolving 'shared.security.mas
+terKey' key; file does not exist: /opt/artifactory-pro-7.21.5/var/etc/security/master.key
+[root@localhost log]#
+
+
+$ more metadata-service.log
+2021-08-09T06:28:44.543Z [jfmd ] [PANIC] [74b40f69b408f150] [keys.go:22                    ]
+ [main                ] - Failed resolving master key: failed resolving 'shared.security.mas
+terKey' key; file does not exist: /opt/artifactory-pro-7.21.5/var/etc/security/master.key
+goroutine 1 [running]:
+runtime/debug.Stack(0x17575f8, 0x4, 0xc000245f01)
+        /src/runtime/debug/stack.go:24 +0x9f
+jfrog.com/jfrog-go-commons/v7/pkg/log.(*standardLogger).Panicfc(0xc0005c5980, 0x1b1e760, 0xc
+000276c60, 0xc000245f40, 0x9b, 0xc000031d98, 0x0, 0x1)
+        goroot/pkg/mod/jfrog.com/jfrog-go-commons/v7@v7.21.2-m007/pkg/log/standard_logger.go
+:85 +0x9e
+jfrog.com/metadata/v7/services/common.MustResolveSecurityKeys(0x1b1e760, 0xc000276c60, 0x1b27070, 0xc00055b8b0
+, 0x1b32910, 0xc0005c5980)
+        jfrog.com/metadata/v7@v7.21.4/services/common/keys.go:22 +0x1c2
+main.main()
+        jfrog.com/metadata/v7@v7.21.4/metadata.go:30 +0x3b1
+ [init]
+
+
+$ more event-service.log
+    ] - Master key is missing. Pending for 115 seconds with 2m0s timeout [startup]
+2021-08-09T06:28:44.736Z [jfevt] [FATAL] [773058374c55a614] [bootstrap.go:115              ] [main
+    ] - Failed resolving master key: failed resolving 'shared.security.masterKey' key; file does not exist: /o
+pt/artifactory-pro-7.21.5/var/etc/security/master.key [startup]
+
+
+
+
+
+
+jfrog-artifactory-pro-7.23.3-linux.tar.gz
+
+wget -O jfrog-rpm-installer.tar.gz "https://releases.jfrog.io/artifactory/jfrog-prox/org/artifactory/pro/rpm/jfrog-platform-trial-prox/[RELEASE]/jfrog-platform-trial-prox-[RELEASE]-rpm.tar.gz"
+
+
+
+
+
+
+
+
+
+
+
+

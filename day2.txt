@@ -1,0 +1,17 @@
+What is Jfrog Artifactory?
+https://www.bestdevops.com/what-is-jfrog-artifactory/
+
+Why We use Jfrog Artifactory?
+https://www.bestdevops.com/why-we-use-jfrog-artifactory/
+
+How Artifactory Works & Artifactory Architecture?
+https://www.bestdevops.com/how-artifactory-works-artifactory-architecture/
+
+How to work with Artifactory aka Artifactory Workflow
+https://www.bestdevops.com/how-to-work-with-artifactory-aka-artifactory-workflow/
+
+How to install & configure Maven
+https://www.devopsschool.com/blog/how-to-install-configure-maven/
+
+How to Upload a package using Maven in Artifactory?
+https://www.devopsschool.com/blog/how-to-upload-a-package-using-maven-in-artifactory/
